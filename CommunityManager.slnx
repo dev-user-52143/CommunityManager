@@ -1,7 +1,9 @@
 <Solution>
   <Folder Name="/Backend/">
+    <Project Path="src/Backend/CommunityManager.Backend/CommunityManager.Backend.csproj" />
+  </Folder>
+  <Folder Name="/Backend/Core/">
     <Project Path="src/Backend/CommunityManager.Backend.Application/CommunityManager.Backend.Application.csproj" />
     <Project Path="src/Backend/CommunityManager.Backend.Domain/CommunityManager.Backend.Domain.csproj" />
-    <Project Path="src/Backend/CommunityManager.Backend/CommunityManager.Backend.csproj" />
   </Folder>
 </Solution>
