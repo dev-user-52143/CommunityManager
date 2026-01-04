@@ -1,0 +1,20 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.1.0">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UserSecretsId>a7e813d3-44bc-443c-8a23-b99807f0899d</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\Backend\CommunityManager.Backend\CommunityManager.Backend.csproj" />
+      <ProjectReference Include="..\..\src\Frontend\CommunityManager.Frontend\CommunityManager.Frontend.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Aspire.Hosting.RabbitMQ" Version="13.1.0" />
+    </ItemGroup>
+
+</Project>
