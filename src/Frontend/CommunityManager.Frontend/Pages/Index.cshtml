@@ -1,0 +1,43 @@
+@page
+@model IndexModel
+@inject IConfiguration Configuration
+@{
+    ViewData["Title"] = "Home page";
+    var backendUrl = Configuration.GetValue<string>("BACKEND_HTTP");
+}
+
+<div>
+    <h1 id="verification-state-notifier">Welcome to the Community Manager</h1>
+</div>
+
+<script>
+    const backendBaseUrl = '@backendUrl';
+    const authCode = crypto.randomUUID();
+
+    const sse = new EventSource(`${backendBaseUrl}/verify/guest?code=${authCode}`);
+
+    sse.addEventListener("verification-event", (event) => {
+        const data = JSON.parse(event.data);
+        console.log(event.data);
+        console.log("Gelen Durum:", data.status);
+
+        // Eğer enum default başlıyorsa Started=0, Completed=1'dir.
+        if (data.status === 0 || data.status === "Started") {
+            console.log("İşlem tamamlandı, bağlantı kapatılıyor...");
+            document.getElementById("verification-state-notifier").innerHTML = "İşlem başladı...!";
+
+        }
+        if (data.status === 1 || data.status === "Completed") {
+            console.log("İşlem tamamlandı, bağlantı kapatılıyor...");
+            document.getElementById("verification-state-notifier").innerHTML = "İşlem tamamlandı!";
+
+            sse.close();
+        }
+    });
+
+    sse.onerror = (err) => {
+        console.error("SSE Hatası:", err);
+        sse.close();
+    };
+
+</script>

@@ -1,9 +1,20 @@
 <Solution>
+  <Folder Name="/Aspire/">
+    <Project Path="Aspire/Apphost/Apphost.csproj" />
+    <Project Path="Aspire/ServiceDefaults/ServiceDefaults.csproj" />
+  </Folder>
   <Folder Name="/Backend/">
     <Project Path="src/Backend/CommunityManager.Backend/CommunityManager.Backend.csproj" />
   </Folder>
   <Folder Name="/Backend/Core/">
     <Project Path="src/Backend/CommunityManager.Backend.Application/CommunityManager.Backend.Application.csproj" />
     <Project Path="src/Backend/CommunityManager.Backend.Domain/CommunityManager.Backend.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Frontend/">
+    <Project Path="src/Frontend/CommunityManager.Frontend/CommunityManager.Frontend.csproj" />
+  </Folder>
+  <Folder Name="/Frontend/Core/">
+    <Project Path="src/Frontend/CommunityManager.Frontend.Application/CommunityManager.Frontend.Application.csproj" />
+    <Project Path="src/Frontend/CommunityManager.Frontend.Domain/CommunityManager.Frontend.Domain.csproj" />
   </Folder>
 </Solution>
